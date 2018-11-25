@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="static/ico/logo_title.png">
+    <title>龙职云实验</title>
+         <!--Loading-->
+      <link href="static/css/Icomoon/style.css" rel="stylesheet" type="text/css" />
+<link href="static/css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/scripts/jquery-2.0.2.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+      <style>
+#loading{
+	background-color: #f5f5f5;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	margin-top: 0px;
+	top: 0px;
+}
+#loading-center{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	}
+#loading-center-absolute {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 200px;
+	width: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	-ms-transform: rotate(-135deg);
+   	-webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.object{
+	-moz-border-radius: 50% 50% 50% 50%;
+	-webkit-border-radius: 50% 50% 50% 50%;
+	border-radius: 50% 50% 50% 50%;
+	position: absolute;
+	border-top: 5px solid #007bff;
+	border-bottom: 5px solid transparent;
+	border-left:  5px solid #007bff;
+	border-right: 5px solid transparent;
+	-webkit-animation: animate 2s infinite;
+	animation: animate 2s infinite;
+	}
+#object_one{
+	left: 75px;
+	top: 75px;
+	width: 50px;
+	height: 50px;
+	}
+#object_two{
+	left: 65px;
+	top: 65px;
+	width: 70px;
+	height: 70px;
+	-webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+	}
+#object_three{
+	left: 55px;
+	top: 55px;
+	width: 90px;
+	height: 90px;
+	-webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+	}
+#object_four{
+	left: 45px;
+	top: 45px;
+	width: 110px;
+	height: 110px;
+	-webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+	}
+@-webkit-keyframes animate {
+
+50% {
+	-ms-transform: rotate(360deg) scale(0.8);
+   	-webkit-transform: rotate(360deg) scale(0.8);
+    transform: rotate(360deg) scale(0.8);
+  }
+
+}
+@keyframes animate {
+50% {
+	-ms-transform: rotate(360deg) scale(0.8);
+   	-webkit-transform: rotate(360deg) scale(0.8);
+    transform: rotate(360deg) scale(0.8);
+  }
+	}
+</style>
+  </head>
+  <body>
+   <div id="loading" style="display: {{ loading }}">
+<div id="loading-center">
+<div id="loading-center-absolute">
+<div class="object" id="object_four"></div>
+<div class="object" id="object_three"></div>
+<div class="object" id="object_two"></div>
+<div class="object" id="object_one"></div>
+
+</div>
+</div>
+
+</div>
+     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h3 class="my-0 mr-md-auto font-weight-normal">控制台</h3>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark">hello,guest</a>
+        <a class="p-2 text-dark" href="logout">注销</a>
+      </nav>
+    </div>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <img class="mb-4" src="static/ico/logo.png" alt="" width="72" height="72">
+      <p><h3>桌面ID:<a style="color: #007bff ">{{ lab_id }}</a></h3></p>
+    </div>
+
+    <div class="container">
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">WEB访问</h4>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title pricing-card-title">{{ web_add }}</h3>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li><a href="http://{{ web_add }}" target="_blank">点击访问</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">客服端访问</h4>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title pricing-card-title">10.158.68.200:{{ vnc_add }}</h3>
+            <ul class="list-unstyled mt-3 mb-4">
+                <li><a href="static/software/Vncviewer.exe">下载客服端</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">SSH直连</h4>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title pricing-card-title">10.158.68.200:{{ ssh_add }}</h3>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li><a href="static/software/Putty.exe">下载SSH</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p class="mt-5 mb-3 text-muted text-center">power by cloudlab&copy; liudonglin all rights reserved</p>
+      </footer>
+    </div>
+  </body>
+<script>
+    setTimeout(function () {
+       $("#loading").fadeOut();
+    },{{ sleep_time }});
+</script>
+</html>

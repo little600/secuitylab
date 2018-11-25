@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="static/ico/logo_title.png">
+    <title>注册</title>
+    <!-- Bootstrap core CSS -->
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="static/css/floating-labels.css" rel="stylesheet">
+    <!-- Custom styles for this background -->
+   <link href="static/css/background.css" rel="stylesheet">
+  </head>
+  <body id="particles">
+      <div class="intro">
+    <form class="form-signin" action="joincheck" method="post" >
+      <div class="text-center mb-4">
+        <img class="mb-4" src="static/ico/logo.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">注册新用户</h1>
+        {% if error %}
+          <div class="alert alert-danger" role="alert" >{{ error }}</div>
+        {% endif %}
+      </div>
+        <div class="form-label-group">
+        <input type="text" id="username" name="username" class="form-control" placeholder="用户名" required autofocus>
+        <label for="username">用户名</label>
+        </div>
+        <div class="form-label-group">
+        <input type="password" id="password" name="password" class="form-control" placeholder="密码" required >
+        <label for="password">密&nbsp&nbsp&nbsp&nbsp码</label>
+        </div>
+        <div class="form-label-group">
+        <input type="text" id="invite" name="invite" class="form-control" placeholder="邀请码" required>
+        <label for="invite">邀请码</label>
+        </div>
+        <div class="text-center mb-4">
+        <p>用户名请使用英文字符，已经注册请<a href="login">登录</a></p>
+        </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+      <p class="mt-5 mb-3 text-muted text-center">power by secuitylab&copy; liudonglin all rights reserved</p>
+    </form>
+          </div>
+  </body>
+<script type='text/javascript' src='static/scripts/jquery-2.0.2.min.js'></script>
+<script type='text/javascript' src='static/scripts/jquery.particleground.min.js'></script>
+<script type='text/javascript' src='static/scripts/background.js'></script>
+<script type='text/javascript' src='static/scripts/calm.js'></script>
+</html>
